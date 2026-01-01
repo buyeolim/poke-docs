@@ -137,3 +137,70 @@ body {
   font-size: 16px;
   cursor: pointer;
 }
+
+.pokemon-detail-container {
+  display: flex;
+  width: 70%;
+  margin: 70px auto;
+  padding: 40px 20px;
+  border: solid black 2px;
+  background-color: #f7f7f7;
+}
+.pokemon-detail-imgbox {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-width: 200px;
+  height: 200px;
+  scale: 1.75;
+}
+.pokemon-detail-infobox {
+  display: flex;
+  flex-direction: column;
+}
+.pokemon-detail-info-no {
+  color: white;
+  font-size: 15px;
+  background-color: lightgrey;
+  width: fit-content;
+  padding: 3px 15px;
+  border-radius: 30px;
+}
+.pokemon-detail-info-name {
+  font-weight: 700;
+  font-size: 24px;
+  margin: 10px 0;
+}
+.pokemon-detail-info-types {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.pokemon-detail-info-types-type {
+  margin: 0 5px;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+}
+.pokemon-detail-info-stats {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid lightgrey 1px;
+  gap: 10px;
+}
+.pokemon-detail-info-stats-box {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 0 0 15px 15px;
+  flex: 1;
+}
+.pokemon-detail-info-stats-box h5 {
+  margin: 10px 0 5px 0;
+  color: grey;
+}

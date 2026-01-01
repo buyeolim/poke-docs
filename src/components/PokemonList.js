@@ -2,12 +2,14 @@ export default function pokemonList({
   $app,
   initialState,
   handlePokemonTypeChange,
+  handleItemClick,
 }) {
   this.state = initialState;
   this.$target = document.createElement("div");
   this.$target.className = "pokemon-list";
 
   this.handlePokemonTypeChange = handlePokemonTypeChange;
+  this.handleItemClick = handleItemClick;
   $app.appendChild(this.$target);
 
   this.template = () => {
@@ -17,7 +19,7 @@ export default function pokemonList({
       this.state.forEach((elm) => {
         temp += `
             <div class="pokemon-item">
-                <div class="pokemon-item-imgbox">
+                <div class="pokemon-item-imgbox" id="${elm.id}">
                     <img src="${elm.img}"></img>
                 </div>
                 <div class="pokemon-item-no">No.${elm.id}</div>
@@ -62,6 +64,11 @@ export default function pokemonList({
 
   this.render = () => {
     this.$target.innerHTML = this.template();
+    this.$target.querySelectorAll(`.pokemon-item-imgbox`).forEach((elm) => {
+      elm.addEventListener("click", () => {
+        this.handleItemClick(elm.id);
+      });
+    });
 
     const $typeDiv = this.$target.querySelectorAll(`.pokemon-item-types-type`);
 

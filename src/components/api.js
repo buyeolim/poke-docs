@@ -29,3 +29,14 @@ export const request = async (searchWord, pokeType) => {
     console.log(err);
   }
 };
+
+export const requestPokemonDetail = async (pokemonId) => {
+  try {
+    const response = await fetch(`${API_URL}detail/${pokemonId}`);
+    let json = await response.json();
+    let data = json.data;
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};
